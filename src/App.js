@@ -10,7 +10,10 @@ import Form from './components/Form/Form';
 import Favorites from './components/Favorites/Favorites';
 
 const email = 'santi@gmail.com';
-const password = 'odito123';
+const password = '123456';
+
+const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
+const API_KEY = '4ee8ce0e6b80.5e7e85b0053fef8f0c31';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -31,7 +34,7 @@ function App() {
   }, [access]);
 
   const onSearch = (id) => {
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+    axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(({ data }) => {
       if (data.name) {
         setCharacters((oldChars) => [...oldChars, data]);
       } else {
@@ -41,8 +44,11 @@ function App() {
   };
 
   const onClose = (id) => {
-    const charactersFiltered = characters.filter((character) => character.id !== Number(id));
+    console.log(id);
+    console.log({ characters });
+    const charactersFiltered = characters.filter((character) => character.id === Number(id));
     setCharacters(charactersFiltered);
+    console.log({ characters });
   };
 
   return (

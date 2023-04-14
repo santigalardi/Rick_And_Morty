@@ -17,17 +17,18 @@ function Card({ id, name, status, species, gender, origin, image, onClose, addFa
   };
 
   useEffect(() => {
-    myFavorites.forEach((fav) => {
-      if (fav.id === id) {
-        setIsFav(true);
-      }
-    });
-  }, [myFavorites]);
+    if (myFavorites) {
+      myFavorites.forEach((fav) => {
+        if (fav.id === id) {
+          setIsFav(true);
+        }
+      });
+    }
+  }, [id, myFavorites]);
 
   return (
     <div>
       <button onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>
-      <button onClick={handleFavorite}></button>
       <button onClick={() => onClose(id)}>X</button>
       <Link to={`/detail/${id}`}>
         <h3 className='card-name'>{name}</h3>
