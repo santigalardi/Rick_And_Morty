@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  padding: 10px 0px;
+  background-color: greenyellow;
+}
+
+.nav-links {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.logout-container {
+  width: 30vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar button {
+  background-color: rgb(23, 23, 190);
+  color: aliceblue;
+  text-decoration: none;
+  margin: 10px;
+  height: 25px;
+}

@@ -44,11 +44,8 @@ function App() {
   };
 
   const onClose = (id) => {
-    console.log(id);
-    console.log({ characters });
-    const charactersFiltered = characters.filter((character) => character.id === Number(id));
+    const charactersFiltered = characters.filter((character) => character.id !== id);
     setCharacters(charactersFiltered);
-    console.log({ characters });
   };
 
   return (

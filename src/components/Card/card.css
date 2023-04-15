@@ -1,0 +1,34 @@
+.card-container {
+  border: 1px solid black;
+  margin: 20px;
+  width: 250px;
+  height: 450px;
+  background-color: greenyellow;
+  position: relative;
+}
+
+.card-img-container img {
+  width: 250px;
+}
+
+.card-img-container {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-btn-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.card-btn-container button {
+  margin: 5px;
+  height: 25px;
+  width: 30px;
+  justify-content: center;
+  text-align: center;
+}
